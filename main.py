@@ -4,14 +4,16 @@ from sun import Sun
 from planet import Planet
 
 def main():
+    solar_system = SolarSystem()
+    simulation = Simulation(solar_system, 500, 500, 10000)
 
+    the_sun = Sun('Sun', 5000, 100000000000000, 5800, 0, 0)
+    solar_system.add_sun(the_sun)
 
-    solarsystem = SolarSystem()
-    solarsystem.add_sun(Sun("sun", 12, 50000, 10000000, 0, 0))
-    solarsystem.add_planet(Planet(name= "earth", radius= 10, mass= 5000, distance= 60, x= 100, y= 100, vel_x= 10, vel_y= 15))
-    sim = Simulation(solarsystem,500,500,100)
-    solarsystem.show_planets()
-    sim.run()
+    earth = Planet('Earth', 50, 100, 75, 60, 0, 3, 10, "green")
+    solar_system.add_planet(earth)
+
+    simulation.run()
 
 if __name__ =='__main__':
     main()

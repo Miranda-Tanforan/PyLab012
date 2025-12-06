@@ -1,9 +1,6 @@
 class UniversalGravity:
-    def __init__(self,G):
-        self.G = G
+  G: float = 6.6743e-11
 
 
 
-G = UniversalGravity(6.67430e-11)
 
-print(G)
